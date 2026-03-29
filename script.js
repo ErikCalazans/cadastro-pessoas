@@ -136,3 +136,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const formCadastro = document.getElementById("formCadastro");
+  const lista = document.getElementById("lista");
+
+  if (formCadastro) {
+    formCadastro.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const idade = document.getElementById("idade").value;
+      const email = document.getElementById("email").value;
+
+      // Criar elemento para mostrar os dados
+      const pessoa = document.createElement("p");
+      pessoa.textContent = `Nome: ${nome}, Idade: ${idade}, Email: ${email}`;
+
+      lista.appendChild(pessoa);
+
+      // Limpar formulário
+      formCadastro.reset();
+    });
+  }
+});
+

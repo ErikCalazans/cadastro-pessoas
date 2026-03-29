@@ -116,3 +116,23 @@ function editar(botao) {
 
 // Carregar ao abrir a página
 window.onload = carregarPessoas;
+
+document.addEventListener("DOMContentLoaded", function () {
+  const formLogin = document.querySelector("form");
+
+  formLogin.addEventListener("submit", function (event) {
+    event.preventDefault(); // impede o envio padrão do formulário
+
+    // Aqui você pode validar usuário e senha, se quiser
+    const usuario = document.getElementById("usuario").value;
+    const senha = document.getElementById("senha").value;
+
+    // Exemplo simples: qualquer login leva para o cadastro
+    if (usuario && senha) {
+      window.location.href = "cadastro.html";
+    } else {
+      alert("Preencha usuário e senha!");
+    }
+  });
+});
+

@@ -160,3 +160,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const formCadastro = document.getElementById("formCadastro");
+  const lista = document.getElementById("lista");
+
+  if (formCadastro) {
+    formCadastro.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const idade = document.getElementById("idade") ? document.getElementById("idade").value : "";
+      const email = document.getElementById("email").value;
+      const telefone = document.getElementById("telefone") ? document.getElementById("telefone").value : "";
+
+      // Criar uma nova linha na lista
+      const linha = document.createElement("tr");
+
+      linha.innerHTML = `
+        <td>${nome}</td>
+        <td>${idade || telefone}</td>
+        <td>${email}</td>
+        <td><button class="remover">Remover</button></td>
+      `;
+
+      lista.appendChild(linha);
+
+      // Limpar formulário
+      formCadastro.reset();
+
+      // Adicionar ação de remover
+      linha.querySelector(".remover").addEventListener("click", function () {
+        linha.remove();
+      });
+    });
+  }
+});
+

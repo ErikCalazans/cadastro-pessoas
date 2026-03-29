@@ -39,3 +39,18 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+h1 {
+    text-align: right;
+    margin-right: 20px; /* Ajuste aqui conforme necessário */
+}
+
+.formulario {
+    margin-top: 20px;
+    /* Outras regras para posicionar o formulário */
+}
+
+.lista-pessoas {
+    margin-top: 40px;
+    /* Outras regras para a tabela */
+}

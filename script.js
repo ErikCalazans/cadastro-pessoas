@@ -196,3 +196,48 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // impede envio automático
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+
+    const tabela = document.getElementById("tabelaPessoas").getElementsByTagName("tbody")[0];
+    const mensagemDiv = document.getElementById("mensagem");
+
+    let erros = [];
+
+    if (nome === "") {
+        erros.push("O campo Nome é obrigatório.");
+    }
+
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "" || !regexEmail.test(email)) {
+        erros.push("Informe um e-mail válido.");
+    }
+
+    if (telefone === "") {
+        erros.push("O campo Telefone é obrigatório.");
+    }
+
+    if (erros.length > 0) {
+        mensagemDiv.style.color = "red";
+        mensagemDiv.innerHTML = erros.join("<br>");
+    } else {
+        mensagemDiv.style.color = "green";
+        mensagemDiv.innerHTML = "Cadastro realizado com sucesso!";
+
+        // Adiciona a nova pessoa na tabela
+        const novaLinha = tabela.insertRow();
+        novaLinha.insertCell(0).innerText = nome;
+        novaLinha.insertCell(1).innerText = email;
+        novaLinha.insertCell(2).innerText = telefone;
+        novaLinha.insertCell(3).innerHTML = "<button>Remover</button>";
+    }
+});
+
+<div id="mensagem"></div>
+
+
+

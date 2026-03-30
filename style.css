@@ -42,7 +42,7 @@ button:hover {
 
 h1 {
     text-align: right;
-    margin-right: 20px; /* Ajuste aqui conforme necessário */
+    margin-right: 10px; /* Ajuste aqui conforme necessário */
 }
 
 .formulario {
@@ -53,4 +53,9 @@ h1 {
 .lista-pessoas {
     margin-top: 40px;
     /* Outras regras para a tabela */
+}
+
+#mensagem {
+    margin-top: 10px;
+    font-weight: bold;
 }

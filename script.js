@@ -92,14 +92,14 @@ document.getElementById("cadastroForm").addEventListener("submit", function(even
   document.getElementById("cadastroForm").reset();
 
 // Exibe a mensagem
-const mensagem = document.getElementById("mensagem");
+/*const mensagem = document.getElementById("mensagem");
 mensagem.innerText = "Cadastro realizado com sucesso!";
 mensagem.style.display = "block";
 
 // Faz a mensagem desaparecer após 5 segundos
 setTimeout(function() {
     mensagem.style.display = "none";
-}, 5000);
+}, 5000);*/
 
 });
 
